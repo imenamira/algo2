@@ -1,0 +1,34 @@
+ALGORITHM algorithm2Methode1
+VAR
+    tab1 : ARRAY_OF INTEGER[n];
+    tab2 : ARRAY_OF INTEGER[m];
+    i,j : INTEGER;
+    sum : INTEGER :=0;
+BEGIN
+    FOR i FROM 0 TO n    STEP 1 DO
+         read (tab1[i]);
+      END_FOR
+
+      FOR i FROM 0 TO m   STEP 1  DO
+        read (tab2[i]);
+      END_FOR
+ 
+
+      FOR i FROM 0 TO n  STEP 1  DO
+         
+         if (true == exist(tab1[i],tab2)) // exist est une fonction qui prend en paramètre un element 
+        sum = sum +tab1[i]    ;                      //et un tableau et return true si cet element exit dans le tableu et 
+                                  // false si non 
+         
+      END_FOR 
+
+      FOR j FROM 0 TO    STEP 1  DO
+         
+         if (true == exist(tab2[i],tab1))
+         sum = sum +tab2[i];
+        
+
+      END_FOR 
+      
+   Write ( "le somme est ", sum);
+END

@@ -1,0 +1,45 @@
+ALGORITHM algorithm2methode2
+
+VAR
+  tab1 : ARRAY_OF INTEGER[n];
+    tab2 : ARRAY_OF INTEGER[m];
+    th : HASH_TABLE<INTEGER ,INTEGER>
+    i,j : INTEGER;
+    sum, cont: INTEGER :=0;
+BEGIN
+
+FOR i FROM 0 TO n STEP 1 DO
+  th.insert(tab1[i], 1) 
+ END_FOR
+
+ FOR j FROM 0 TO m STEP 1 DO
+  if (true == exist(tab2[j],tab1)) 
+   cont := th.get(tab2[i])+1;
+   th.insert(tab2[i], cont) ;
+  
+   ELSE
+       th.insert(tab2[i], 1) 
+   END_IF
+     
+END_FOR
+    
+    FOR i FROM 0 TO n STEP 1 DO
+
+  IF (th.get(tab1[i])>= 2) THEN
+      sum =sum +tab1[i];
+  END_IF
+ 
+END_FOR
+FOR j FROM 0 TO m STEP 1 DO
+
+  IF (th.get(tab2[j])>= 2) THEN
+      sum =sum +tab2[j];
+  END_IF
+ 
+END_FOR
+
+
+
+   Write ( "le somme est ", sum);
+
+END
